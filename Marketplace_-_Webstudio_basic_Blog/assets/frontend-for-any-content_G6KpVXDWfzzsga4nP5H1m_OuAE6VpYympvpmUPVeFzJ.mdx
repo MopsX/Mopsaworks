@@ -1,0 +1,54 @@
+---
+title: A visual frontend for any content
+slug: frontend-for-any-content
+category: Guides
+publishedAt: 2024-05-10
+author:
+  $ref: ../Authors/sam-bennett.mdx#frontmatter
+readTime: 5 min read
+excerpt: Connect structured content to a visual frontend while keeping the CMS,
+  presentation, and delivery layers independent.
+accent: amber
+featureImage:
+  $ref: ./assets/frontend-for-any-content-feature.webp
+---
+
+A headless CMS separates content management from presentation. Editors work in a system designed for structured content, while the website chooses how that content should look and behave.
+
+The tradeoff has traditionally been implementation cost: a flexible frontend often required a custom application and ongoing engineering work.
+
+## A visual presentation layer
+
+Webstudio approaches the problem as a frontend that can connect to an HTTP API. The visual Builder handles layout, typography, responsive design, and component composition while external systems remain responsible for content.
+
+This lets teams keep a CMS they already understand instead of migrating everything into a website builder’s proprietary database.
+
+## Three pieces of a dynamic blog
+
+A typical blog integration has a small number of moving parts:
+
+1. A **Resource** requests posts from an API.
+2. A **Collection** repeats a card for each post on the overview page.
+3. A dynamic route such as `/blog/:slug` fetches one matching article.
+
+The article template is designed once. Its heading, author, date, image, and body are connected to fields in the response. New posts reuse the same presentation automatically.
+
+## Use the right content tool
+
+Different teams have different needs. A simple editorial blog, a product catalog, and a knowledge base may belong in different systems. A frontend that communicates through standard APIs can bring those sources into one experience.
+
+This modularity also reduces lock-in. The presentation can evolve without rewriting the CMS, and a content source can be replaced without redesigning every page.
+
+## Keep the rendering experience fast
+
+Dynamic does not need to mean slow. Resource requests can be made close to visitors, responses can be cached appropriately, and the final page can still use responsive images and semantic HTML.
+
+The design remains visible and editable, while the data flow stays explicit: fetch structured content, iterate where needed, and bind values to meaningful components.
+
+## A focused division of responsibility
+
+The CMS should be excellent at content workflows. The frontend should be excellent at delivering that content across devices. Connecting the two lets each tool concentrate on its strongest job—and lets teams change one layer without surrendering control of the other.
+
+---
+
+*Adapted for this demo from ideas in Webstudio’s article [Webstudio: A No-Code Frontend for Headless CMS](https://webstudio.is/blog/frontend-for-headless-cms).*

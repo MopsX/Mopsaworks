@@ -1,0 +1,56 @@
+---
+title: Parametric design beyond no-code
+slug: parametric-design-beyond-no-code
+category: Strategy
+publishedAt: 2024-10-14
+author:
+  $ref: ../Authors/alex-morgan.mdx#frontmatter
+readTime: 6 min read
+excerpt: See visual development as a system of parameters, relationships, and
+  code—not a collection of frozen screens.
+accent: blue
+featureImage:
+  $ref: ./assets/parametric-design-feature.webp
+---
+
+The most capable visual tools do more than let you drag objects around. They expose the rules that connect those objects.
+
+That is the practical meaning of **parametric design**: instead of editing every result individually, you adjust inputs and relationships that can produce many consistent results.
+
+## Parameters are already familiar
+
+Auto layout is a parameterized system. Change a container from a row to a column and the layout algorithm reorganizes its children. A theme switch is another example: a small set of color choices updates an entire interface.
+
+The web platform is full of these systems. Flexbox, grid, custom properties, component props, and responsive conditions all let a designer describe behavior rather than freeze one arrangement.
+
+## Reduce repeated decisions
+
+Consider a light and dark theme. Maintaining a separate named color for every variation quickly doubles the work. Modern CSS can derive some values from a smaller source palette and switch them according to context.
+
+The benefit is not clever code. It is fewer independent decisions to maintain. When the brand color changes, related surfaces remain connected instead of drifting apart.
+
+## Components are small design programs
+
+An HTML input changes behavior through its `type` attribute. A reusable card can change emphasis, density, or orientation through props. Each component turns a stable structure plus a set of parameters into a result.
+
+Visual development becomes more powerful when these parameters are visible and editable without hiding the underlying web model.
+
+## Code and visual work form a spectrum
+
+Pure no-code tools often reach a hard limit because their internal representation cannot express every behavior. Pure code offers complete control but makes many visual iterations unnecessarily slow.
+
+A more durable workflow uses each where it is strongest:
+
+- Visual controls for common structure, styling, and composition.
+- Code for specialized logic and new capabilities.
+- Shared standards so work can move between the two.
+
+## AI adds another input layer
+
+Natural language can help define an initial direction, while the visual canvas makes the result inspectable and adjustable. Code keeps the representation portable and understandable.
+
+Together, these modes suggest a future beyond the old code-versus-no-code debate: describe an intention, generate a system, tune its parameters, and use code when the remaining edge genuinely needs it.
+
+---
+
+*Adapted for this demo from ideas in Webstudio’s article [The future of no-code is parametric design](https://webstudio.is/blog/the-future-of-no-code-is-parametric-design).*

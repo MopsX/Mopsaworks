@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Post",
+  "type": "object",
+  "required": [
+    "title",
+    "slug",
+    "category",
+    "excerpt",
+    "publishedAt",
+    "readTime",
+    "accent"
+  ],
+  "properties": {
+    "title": {
+      "title": "Title",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 160
+    },
+    "slug": {
+      "title": "URL slug",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 160,
+      "$ref": "https://webstudio.is/schemas/slug",
+      "x-webstudio": {
+        "control": "slug"
+      }
+    },
+    "category": {
+      "title": "Category",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 80
+    },
+    "excerpt": {
+      "title": "Excerpt",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 500,
+      "x-webstudio": {
+        "control": "textarea"
+      }
+    },
+    "publishedAt": {
+      "title": "Publication date",
+      "type": "string",
+      "minLength": 10,
+      "maxLength": 10
+    },
+    "readTime": {
+      "title": "Reading time",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 50
+    },
+    "accent": {
+      "title": "Accent",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 40
+    }
+  },
+  "additionalProperties": true,
+  "x-webstudio": {
+    "template": "template.mdx",
+    "entries": [
+      "*.mdx"
+    ],
+    "slugField": "slug",
+    "generateSlugFrom": "title"
+  }
+}

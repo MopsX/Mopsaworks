@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Author",
+  "type": "object",
+  "required": [
+    "name",
+    "slug"
+  ],
+  "properties": {
+    "name": {
+      "title": "Name",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 120
+    },
+    "slug": {
+      "title": "URL slug",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 120,
+      "$ref": "https://webstudio.is/schemas/slug",
+      "x-webstudio": {
+        "control": "slug"
+      }
+    }
+  },
+  "additionalProperties": true,
+  "x-webstudio": {
+    "template": "template.mdx",
+    "entries": [
+      "*.mdx"
+    ],
+    "slugField": "slug",
+    "generateSlugFrom": "name"
+  }
+}
